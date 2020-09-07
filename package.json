@@ -1,0 +1,20 @@
+{
+  "name": "github-substring-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "ncc": "ncc build index.js -o dist",
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.4"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.24.0",
+    "jest": "^26.2.2"
+  }
+}

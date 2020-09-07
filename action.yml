@@ -1,0 +1,35 @@
+name: substring-action
+description: "Retrieves a substring from the input and outputs it to the specified variable."
+
+inputs:
+  value:
+    description: "The that the substring will be obtained from."
+    required: true
+  output_name:
+    description: "The name of the output variable."
+    required: true
+    default: substring
+  index_of_str:
+    description: "The part of the string that will be matched with indexOf() and removed."
+    required: false
+  length_from_start:
+    description: "Returns the substring of the specified length, starting from the beginning.
+    If this is longer than the input value then this will return the full string."
+    required: false
+  length_from_end:
+    description: "Counts backwards from the end of the input value and returns the substring.
+    If this is longer than the input value then this will result in an error
+    (if fail_if_not_found = true) or the default_return_value being returned."
+    required: false
+  fail_if_not_found:
+    description: "Fails if the index_of_str is not found with indexOf()."
+    required: false
+    default: true
+  default_return_value:
+    description: "Return value if fail_if_not_found is false."
+    required: false
+    default: ""
+
+runs:
+  using: node12
+  main: dist/index.js

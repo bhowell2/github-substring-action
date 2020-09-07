@@ -1,0 +1,24 @@
+name: Continuous Integration
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.head_ref }}
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+      - run: npm ci
+      - run: npm test
+      # if all above passes then create the dist and push it to ensure that
+      # the latest dist code is available
+      - run: npm run ncc
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated distrubition.
