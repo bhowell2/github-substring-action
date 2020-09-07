@@ -1,6 +1,10 @@
 name: substring-action
 description: "Retrieves a substring from the input and outputs it to the specified variable."
 
+branding:
+  icon: file-text
+  color: green
+
 inputs:
   value:
     description: "The that the substring will be obtained from."
