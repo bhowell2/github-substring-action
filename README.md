@@ -43,25 +43,25 @@ steps:
       value: "abc123"
       index_of_str: "ab"
       length_from_start: 3
-# steps.one.outputs.substring = 'c123' -- note length_from_start is ignored
+# steps.two.outputs.substring = 'c123' -- note length_from_start is ignored
 ```
 
 ```yaml
 steps:
   - uses: bhowell2/github-substring-action
-    id: two
+    id: three
     with:
       value: "abc123"
       length_from_start: 3
-# steps.one.outputs.substring = 'abc'
+# steps.three.outputs.substring = 'abc'
 ```
 
 ```yaml
 steps:
   - uses: bhowell2/github-substring-action
-    id: two
+    id: four
     with:
       value: "abc123"
       length_from_end: 3
-# steps.one.outputs.substring = '123'
+# steps.four.outputs.substring = '123'
 ```
