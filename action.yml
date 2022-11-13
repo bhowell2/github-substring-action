@@ -7,7 +7,7 @@ branding:
 
 inputs:
   value:
-    description: "The that the substring will be obtained from."
+    description: "Value that the substring will be obtained from."
     required: true
   output_name:
     description: "The name of the output variable."
@@ -35,5 +35,5 @@ inputs:
     default: ""
 
 runs:
-  using: node12
+  using: node16
   main: dist/index.js

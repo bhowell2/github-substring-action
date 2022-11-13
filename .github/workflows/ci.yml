@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  test:
+  test_and_update_dist:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.head_ref }}
@@ -13,7 +13,7 @@ jobs:
           token: ${{ secrets.PAT }}
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
+          node-version: '16'
       - run: npm ci
       - run: npm test
       # if all above passes then create the dist and push it to ensure that

@@ -23,7 +23,6 @@ If more than one of the substring inputs is provided, the order of precedence is
 ## Outputs
 `output_name` - this will be whatever value was provided as the `output_name` on the input or defaults to `substring`.
 
-
 ## Example Usage
 ```yaml
 steps:

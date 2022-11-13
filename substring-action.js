@@ -41,7 +41,6 @@ function run() {
   } catch (err) {
     core.setFailed("Action failed with error: '" + err + "'");
   }
-
 }
 
 module.exports = run;
