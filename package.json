@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "ncc": "ncc build index.js -o dist",
+    "ncc": "ncc build index.js -o dist -m",
     "test": "jest --verbose --coverage"
   },
   "keywords": [],
