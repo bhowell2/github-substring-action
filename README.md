@@ -26,7 +26,7 @@ If more than one of the substring inputs is provided, the order of precedence is
 ## Example Usage
 ```yaml
 steps:
-  - uses: bhowell2/github-substring-action
+  - uses: bhowell2/github-substring-action@v1.0.0
     id: one
     with:
       value: "abc123"
@@ -36,7 +36,7 @@ steps:
 
 ```yaml
 steps:
-  - uses: bhowell2/github-substring-action
+  - uses: bhowell2/github-substring-action@v1.0.0
     id: two
     with:
       value: "abc123"
@@ -47,7 +47,7 @@ steps:
 
 ```yaml
 steps:
-  - uses: bhowell2/github-substring-action
+  - uses: bhowell2/github-substring-action@v1.0.0
     id: three
     with:
       value: "abc123"
@@ -57,7 +57,7 @@ steps:
 
 ```yaml
 steps:
-  - uses: bhowell2/github-substring-action
+  - uses: bhowell2/github-substring-action@v1.0.0
     id: four
     with:
       value: "abc123"
