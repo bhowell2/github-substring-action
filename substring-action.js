@@ -22,16 +22,16 @@ function run() {
         }
       } else {
         // this is the start position of the indexOfStr + the length (to find the remaining bit)
-        outputStr = value.substr(pos + indexOfStr.length);
+        outputStr = value.substring(pos + indexOfStr.length);
       }
     } else if (lengthFromStart) {
-      outputStr = value.substr(0, Number.parseInt(lengthFromStart))
+      outputStr = value.substring(0, Number.parseInt(lengthFromStart))
     } else if (lengthFromEnd) {
       let fromEndInt = Number.parseInt(lengthFromEnd);
       if (fromEndInt > value.length) {
         outputStr = value;
       } else {
-        outputStr = value.substr(value.length - fromEndInt);
+        outputStr = value.substring(value.length - fromEndInt);
       }
     } else {
       // throw error
