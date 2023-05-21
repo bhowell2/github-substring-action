@@ -23,7 +23,15 @@ core.setFailed = jest.fn(arg => {
  * @return {function(*, *=): *}
  */
 function setCoreGetInputMock(obj) {
-  if (!obj.hasOwnProperty('output_name')) {
+  if (!obj.hasOwnProperty('index_of_str')) {
+    obj['index_of_str'] = '';
+  }
+  if (!obj.hasOwnProperty('length_from_start')) {
+    obj['length_from_start'] = '';
+  }
+  if (!obj.hasOwnProperty('length_from_end')) {
+    obj['length_from_end'] = '';
+  }  if (!obj.hasOwnProperty('output_name')) {
     obj['output_name'] = 'substring';
   }
   if (!obj.hasOwnProperty('fail_if_not_found')) {
@@ -106,26 +114,26 @@ describe('Check returned substring', () => {
   })
 
   test('Check substring from length_from_start output.', () => {
-    setCoreGetInputMock({value: "abc123", length_from_start: 1})
+    setCoreGetInputMock({value: "abc123", length_from_start: '1'})
     setCoreExpectedOutput({substring: "a"})
     substringAction();
 
-    setCoreGetInputMock({value: "abc123", length_from_start: 5})
+    setCoreGetInputMock({value: "abc123", length_from_start: '5'})
     setCoreExpectedOutput({substring: "abc12"})
     substringAction();
 
-    setCoreGetInputMock({value: "abc123", length_from_start: 10})
+    setCoreGetInputMock({value: "abc123", length_from_start: '10'})
     setCoreExpectedOutput({substring: "abc123"})
     substringAction();
   })
 
   test('Check substring from length_from_end output.', () => {
     // changing output name to ensure works.
-    setCoreGetInputMock({value: "abc123", length_from_end: 3, output_name: "oo"})
+    setCoreGetInputMock({value: "abc123", length_from_end: '3', output_name: "oo"})
     setCoreExpectedOutput({oo: "123"})
     substringAction();
 
-    setCoreGetInputMock({value: "abc123", length_from_end: 10})
+    setCoreGetInputMock({value: "abc123", length_from_end: '10'})
     setCoreExpectedOutput({substring: "abc123"})
     substringAction();
   })

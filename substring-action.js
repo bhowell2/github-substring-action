@@ -12,7 +12,7 @@ function run() {
 
   try {
     let outputStr = null;
-    if (indexOfStr !== undefined) {
+    if (indexOfStr) {
       const pos = value.indexOf(indexOfStr);
       if (pos < 0) {  // no match was found
         if (failIfNotFound) {
@@ -24,9 +24,9 @@ function run() {
         // this is the start position of the indexOfStr + the length (to find the remaining bit)
         outputStr = value.substr(pos + indexOfStr.length);
       }
-    } else if (lengthFromStart !== undefined) {
+    } else if (lengthFromStart) {
       outputStr = value.substr(0, Number.parseInt(lengthFromStart))
-    } else if (lengthFromEnd !== undefined) {
+    } else if (lengthFromEnd) {
       let fromEndInt = Number.parseInt(lengthFromEnd);
       if (fromEndInt > value.length) {
         outputStr = value;
